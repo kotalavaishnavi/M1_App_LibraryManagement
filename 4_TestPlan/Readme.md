@@ -8,7 +8,7 @@
 | H_02     | The inputs required is given                                             | 7        | exit       |   exit      |                 Scenario Based |
 | H_03     | System Testing                                                           | one      | exit       |   fail      |                  Boundary Based|
  
-# Table no: Low level test plan
+## Table no: Low level test plan
 
 | Test ID  | Description                                                              | Exp I/P  | Exp O/P    |	Actual Out  |            Type Of Test        |
 |----------|--------------------------------------------------------------------------|----------|------------|-------------|--------------------------------|
