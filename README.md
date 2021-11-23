@@ -7,5 +7,3 @@
 |Design	|Documents specifing design details|
 |Implementation	|All code and documentation|
 |Test plan|	Documents with test plans and procedures|
-|Report	|Documents detailing requirements and research|
-|Imagesandvideos|	Documents specifing design details|
