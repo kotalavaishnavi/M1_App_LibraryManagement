@@ -1,65 +1,95 @@
-# Name of the project
-PROJECT_NAME = Librarymanagement
+#Target_name : LibraryManagement
 
-# Output directory
-BUILD = build
+#<TAB>Command
 
-# All source code files
-SRC = project_main.c\
-src/LibraryManagement.c
 
-# All test source files
-TEST_SRC = src/LibraryManagement.c\
-test/LibraryManagement.c\
-unity/unity.c\
+# 'make'        build executable file 'main'
+# 'make clean'  removes all .o and executable files
+#
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+# define the C compiler to use
+CC = gcc
 
-# All include folders with header files
-INC	= -Iinc\
--Iunity\
+# define any compile-time flags
+CFLAGS	:= -Wall -Wextra -g
 
-#Library Inlcudes
-#if working with CUnit 
-#INCLUDE_LIBS = -lcunit
-INCLUDE_LIBS =
+# define library paths in addition to /usr/lib
+#   if I wanted to include libraries not in /usr/lib I'd specify
+#   their path using -Lpath, something like:
+LFLAGS =
 
-# Project Output name
-PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
+# define output directory
+OUTPUT	:= output
 
-# Document files
-DOCUMENTATION_OUTPUT = documentation/html
+# define source directory
+SRC		:= src
 
-# Default target built
-$(PROJECT_NAME):all
+# define include directory
+INCLUDE	:= include
 
-# Run the target even if the matching name exists
-.PHONY: run clean test doc all
+# define lib directory
+LIB		:= lib
 
-all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out
+ifeq ($(OS),Windows_NT)
+MAIN	:= main.exe
+SOURCEDIRS	:= $(SRC)
+INCLUDEDIRS	:= $(INCLUDE)
+LIBDIRS		:= $(LIB)
+FIXPATH = $(subst /,\,$1)
+RM			:= del /q /f
+MD	:= mkdir
+else
+MAIN	:= main
+SOURCEDIRS	:= $(shell find $(SRC) -type d)
+INCLUDEDIRS	:= $(shell find $(INCLUDE) -type d)
+LIBDIRS		:= $(shell find $(LIB) -type d)
+FIXPATH = $1
+RM = rm -f
+MD	:= mkdir -p
+endif
 
-# Call `make run` to run the application
-run:$(PROJECT_NAME)
-	./$(PROJECT_OUTPUT).out
+# define any directories containing header files other than /usr/include
+INCLUDES	:= $(patsubst %,-I%, $(INCLUDEDIRS:%/=%))
 
-# Document the code using Doxygen
-#doc:
-#	make -C ./documentation
+# define the C libs
+LIBS		:= $(patsubst %,-L%, $(LIBDIRS:%/=%))
 
-# Build and run the unit tests
-test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
-	./$(TEST_OUTPUT)
-#Coverage
-coverageCheck:$(BUILD)
-	g++ -fprofile-arcs -ftest-coverage -fPIC -O0 $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
-	./$(TEST_OUTPUT)
+# define the C source files
+SOURCES		:= $(wildcard $(patsubst %,%/*.c, $(SOURCEDIRS)))
 
-# Remove all the built files, invoke by `make clean`
+# define the C object files 
+OBJECTS		:= $(SOURCES:.c=.o)
+
+#
+# The following part of the makefile is generic; it can be used to 
+# build any executable just by changing the definitions above and by
+# deleting dependencies appended to the file from 'make depend'
+#
+
+OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/$(MAIN))
+
+all: $(OUTPUT) $(MAIN)
+	@echo Executing 'all' complete!
+
+$(OUTPUT):
+	$(MD) $(OUTPUT)
+
+$(MAIN): $(OBJECTS) 
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(OBJECTS) $(LFLAGS) $(LIBS)
+
+# this is a suffix replacement rule for building .o's from .c's
+# it uses automatic variables $<: the name of the prerequisite of
+# the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
+# (see the gnu make manual section about automatic variables)
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+
+.PHONY: clean
 clean:
-	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
+	$(RM) $(OUTPUTMAIN)
+	$(RM) $(call FIXPATH,$(OBJECTS))
+	@echo Cleanup complete!
 
-# Create new build folder if not present
-$(BUILD):
-	mkdir build
+run: all
+	./$(OUTPUTMAIN)
+	@echo Executing 'run: all' complete!
