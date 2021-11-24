@@ -76,32 +76,32 @@ void Addbook(void){
  * 
  */
   
-void Displaybook();
+void Displaybook(void);
 /**
  * @brief displaybooks
  * 
  */
-void Searchbook();
+void Searchbook(void);
 /**
  * @brief searching of books
  * 
  */
-void Author();
+void Author(void);
 /**
  * @brief enter author details
  * 
  */
-void Titlelist();
+void Titlelist(void);
 /**
  * @brief list of the books with same title
  * 
  */
-void Stock();
+void Stock(void);
 /**
  * @brief cheaking the stock
  * 
  */
-void Addmembr();
+void Addmembr(void);
 /**
  * @brief adding the mumber
  * 
