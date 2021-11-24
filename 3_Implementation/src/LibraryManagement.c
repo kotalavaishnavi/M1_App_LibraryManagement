@@ -492,6 +492,3 @@ void Exit()
 {
   exit(0);
 }
-terminal{
-    exitCode: Thenale<number>
-    }
