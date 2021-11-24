@@ -1,3 +1,10 @@
+# SDLC Activity Based Learning
+Visit [Pages for Report -optional](using github.io option)
+
+|Build|Code Quality|	Unity|	[Git Inspector](using github.io option)|
+|------|-----------|------|----------------------------------------|
+|[![CodeQL](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml)[![CI](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml)|
+
 # M1_App_LibraryManagement
 ## Badges
 # Folder Structure
