@@ -108,3 +108,6 @@ void exit()
  * @brief if invalid input
  * 
  */
+ Terminal{
+ exitCode: Thenable<number>
+ }
