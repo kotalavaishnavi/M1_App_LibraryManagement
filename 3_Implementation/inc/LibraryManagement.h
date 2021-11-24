@@ -103,7 +103,7 @@ void bookret();
  * @brief returning the book
  * 
  */
-void exit()
+void exit();
 /**
  * @brief if invalid input
  * 
