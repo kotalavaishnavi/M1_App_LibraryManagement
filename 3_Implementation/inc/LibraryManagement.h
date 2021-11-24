@@ -50,3 +50,61 @@ struct
 }membr;
 
 //initializing the files used in the program
+
+FILE *librecord;
+FILE *membrrecord;
+FILE *fp1;
+FILE *fp2;
+FILE *temp1;
+FILE *temp2;
+void Addbook();
+/**
+ * @brief adding book details
+ * 
+ */
+void Displaybook();
+/**
+ * @brief displaybooks
+ * 
+ */
+void Searchbook();
+/**
+ * @brief searching of books
+ * 
+ */
+void Author();
+/**
+ * @brief enter author details
+ * 
+ */
+void Titlelist();
+/**
+ * @brief list of the books with same title
+ * 
+ */
+void Stock();
+/**
+ * @brief cheaking the stock
+ * 
+ */
+void Addmembr();
+/**
+ * @brief adding the mumber
+ * 
+ */
+void Issue();
+/**
+ * @brief issuing the book
+ * 
+ * 
+ */
+void bookret();
+/**
+ * @brief returning the book
+ * 
+ */
+void exit()
+/**
+ * @brief if invalid input
+ * 
+ */
