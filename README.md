@@ -9,6 +9,7 @@ Visit [Pages for Report -optional](using github.io option)
 
 |Build|Code Quality|	Unity|	[Git Inspector](using github.io option)|
 |------|-----------|------|----------------------------------------|
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fb8e3cabdfc7400f977a45a30f47ed31)](https://app.codacy.com/gh/kotalavaishnavi/M1_App_LibraryManagement?utm_source=github.com&utm_medium=referral&utm_content=kotalavaishnavi/M1_App_LibraryManagement&utm_campaign=Badge_Grade_Settings)
 |[![CodeQL](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml)[![CI](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml)|![test image1](https://img.shields.io/badge/Code%20Quality-A-green)|![image](https://img.shields.io/badge/Unity%20test--unity-passing-green)|![image](https://img.shields.io/badge/contribution%20check--Git%20Inspector-passing-green)|
 
 
