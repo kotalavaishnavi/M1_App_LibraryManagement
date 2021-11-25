@@ -9,7 +9,7 @@ Visit [Pages for Report -optional](using github.io option)
 
 |Build|Code Quality|	Unity|	[Git Inspector](using github.io option)|
 |------|-----------|------|----------------------------------------|
-|[![CodeQL](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml)[![CI](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml)|![test image1](https://img.shields.io/badge/Code%20Quality-A-green)|![image](https://img.shields.io/badge/Unity%20test--unity-passing-green)|![image](https://img.shields.io/badge/contribution%20check--Git%20Inspector-passing-green)|
+|[![CodeQL](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/codeql-analysis.yml)[![CI](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml/badge.svg)](https://github.com/cschlosser/doxdocgen/actions/workflows/ci.yml)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6418b0a8dbe841759de1a7fae888b4a5)](https://www.codacy.com/gh/kotalavaishnavi/M1_App_LibraryManagement/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kotalavaishnavi/M1_App_LibraryManagement&amp;utm_campaign=Badge_Grade)|![image](https://img.shields.io/badge/Unity%20test--unity-passing-green)|![image](https://img.shields.io/badge/contribution%20check--Git%20Inspector-passing-green)|
 
 
 # Folder Structure
